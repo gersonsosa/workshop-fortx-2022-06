@@ -4,4 +4,4 @@ package eu.luminis.workshop.smallsteps
 //
 // fun hello(name: String) = "Hello $name"
 //
-fun hello(name: String) = "Hello world"
+fun hello(name: String) = "Hello $name"

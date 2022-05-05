@@ -2,6 +2,10 @@
 
 During the workshop, this repo will be updated with code that you will be working on.
 
+## Assignments
+
+Go to [part-01/README.md](part-01/README.md) for the first exercises.
+
 ## Workshop preparation
 
 **TLDR:** Install IntelliJ + clone repo + check that tests run.
@@ -68,10 +72,3 @@ going through a few of the [Kotlin Koans online](https://play.kotlinlang.org/koa
 Tip: the Koans run tests to validate your solution, in some cases it can be insightful to take a peek at
 the [sourcecode for those tests](https://github.com/Kotlin/kotlin-koans/tree/master/test) to understand what is going
 on.
-
-## Look forward to the workshop
-
-Most important is to look forward to learning new things and maybe even share your own knowledge with other people
-during the workshop.
-
-See you there!
