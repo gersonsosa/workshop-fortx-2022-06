@@ -1,6 +1,8 @@
 package eu.luminis.workshop.smallsteps.persistence
 
 import eu.luminis.workshop.smallsteps.api.NewUserRequest
+import eu.luminis.workshop.smallsteps.logic.NewUserCommand
+import eu.luminis.workshop.smallsteps.logic.UserStore
 import org.jetbrains.exposed.dao.UUIDEntity
 import org.jetbrains.exposed.dao.UUIDEntityClass
 import org.jetbrains.exposed.dao.id.EntityID
@@ -8,12 +10,12 @@ import org.jetbrains.exposed.dao.id.UUIDTable
 import java.util.*
 
 // Understands how to perform user operations against the database
-class UserDAO {
-    suspend fun insertUser(request: NewUserRequest): UUID {
+class UserDAO : UserStore {
+    override suspend fun insertUser(newUserCommand: NewUserCommand): UUID {
         return nonBlockingTransaction {
             val createdUser = User.new {
-                this.email = request.email
-                this.password = request.password
+                this.email = newUserCommand.email.value
+                this.password = newUserCommand.password.value
             }
 
             createdUser.id.value
